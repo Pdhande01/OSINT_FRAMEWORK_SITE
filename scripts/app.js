@@ -6,6 +6,20 @@
 (function () {
   'use strict';
 
+  // ==========================================================================
+  // CENTRAL MAKER PROFILE CONFIGURATION
+  // Replace the placeholder URLs below with your actual GitHub & LinkedIn URLs:
+  // ==========================================================================
+  const MAKER_CONFIG = {
+    name: 'Parth Dhande',
+    role: 'Cybersecurity Enthusiast | Ethical Hacking | OSINT',
+    githubUrl: 'https://github.com/YOUR_GITHUB_USERNAME',
+    linkedinUrl: 'https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/',
+    interests: 'OSINT | Ethical Hacking | Digital Investigations | Security Tools',
+    mission: 'Making open-source intelligence resources easier to discover, explore, and use responsibly.',
+    status: 'BUILDING • LEARNING • INVESTIGATING'
+  };
+
   // 1. Data Store
   let tools = window.OSINT_TOOLS_DATA || [];
   let starredToolIds = new Set(JSON.parse(localStorage.getItem('osint_starred_tools') || '[]'));
@@ -107,6 +121,7 @@
     buildCategorySidebar();
     setupTargetPivotEngine();
     renderAllViews();
+    setupMakerSection();
     attachEventListeners();
   }
 
@@ -893,6 +908,107 @@
         caseDossierDrawer.classList.remove('open');
       }
     });
+  }
+
+  // ==========================================================================
+  // Maker Section Integration & Controls
+  // ==========================================================================
+  function setupMakerSection() {
+    const navMakerBtn = document.getElementById('navMakerBtn');
+    const makerSection = document.getElementById('maker');
+    const makerGithubLink = document.getElementById('makerGithubLink');
+    const makerLinkedinLink = document.getElementById('makerLinkedinLink');
+    const btnMakerBackToTools = document.getElementById('btnMakerBackToTools');
+
+    const makerDynamicToolCount = document.getElementById('makerDynamicToolCount');
+    const makerDynamicCategoryCount = document.getElementById('makerDynamicCategoryCount');
+    const makerDynamicUsefulCount = document.getElementById('makerDynamicUsefulCount');
+
+    // 1. Populate Social Links from MAKER_CONFIG
+    if (makerGithubLink) {
+      makerGithubLink.href = MAKER_CONFIG.githubUrl;
+      makerGithubLink.setAttribute('target', '_blank');
+      makerGithubLink.setAttribute('rel', 'noopener noreferrer');
+    }
+    if (makerLinkedinLink) {
+      makerLinkedinLink.href = MAKER_CONFIG.linkedinUrl;
+      makerLinkedinLink.setAttribute('target', '_blank');
+      makerLinkedinLink.setAttribute('rel', 'noopener noreferrer');
+    }
+
+    // 2. Populate Dynamic Project Statistics from real data
+    if (makerDynamicToolCount) {
+      makerDynamicToolCount.textContent = tools.length.toLocaleString();
+    }
+    if (makerDynamicCategoryCount) {
+      const uniqueCats = new Set(tools.map(t => t.category)).size;
+      makerDynamicCategoryCount.textContent = uniqueCats || '33';
+    }
+    if (makerDynamicUsefulCount) {
+      const useful = tools.filter(t => (t.indiaCompatibility || '').toLowerCase() === 'useful').length;
+      makerDynamicUsefulCount.textContent = useful.toLocaleString();
+    }
+
+    // 3. Navigation Smooth Scroll to Maker
+    function scrollToMaker(e) {
+      if (e) e.preventDefault();
+      if (makerSection) {
+        makerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.pushState(null, null, '#maker');
+        if (navMakerBtn) navMakerBtn.classList.add('active');
+      }
+    }
+
+    if (navMakerBtn) {
+      navMakerBtn.addEventListener('click', scrollToMaker);
+    }
+
+    // 4. Return to Tools Button
+    if (btnMakerBackToTools) {
+      btnMakerBackToTools.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.pushState(null, null, '#top');
+        if (navMakerBtn) navMakerBtn.classList.remove('active');
+        if (searchInput) {
+          setTimeout(() => searchInput.focus(), 400);
+        }
+      });
+    }
+
+    // 5. Active Navbar State on Scroll via IntersectionObserver
+    if ('IntersectionObserver' in window && makerSection && navMakerBtn) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navMakerBtn.classList.add('active');
+          } else {
+            navMakerBtn.classList.remove('active');
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      });
+      observer.observe(makerSection);
+    }
+
+    // 6. Direct URL Hash Navigation (e.g., /#maker on load or back/forward)
+    function handleHash() {
+      if (window.location.hash === '#maker' && makerSection) {
+        setTimeout(() => {
+          makerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (navMakerBtn) navMakerBtn.classList.add('active');
+        }, 150);
+      } else if (navMakerBtn) {
+        navMakerBtn.classList.remove('active');
+      }
+    }
+
+    window.addEventListener('hashchange', handleHash);
+    if (window.location.hash === '#maker') {
+      handleHash();
+    }
   }
 
   // Helper Badge Classes

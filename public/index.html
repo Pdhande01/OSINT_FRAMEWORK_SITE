@@ -15,12 +15,13 @@
   <link rel="stylesheet" href="styles/index.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2338bdf8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/></svg>">
 </head>
-<body>
+<body id="top">
 
   <!-- Top Navigation Header -->
   <header class="app-header">
     <div class="header-inner">
-      <div class="brand-section">
+      <a href="#top" class="brand-link" title="OSINT Field Guide — Return to Tools Explorer">
+        <div class="brand-section">
         <div class="brand-logo-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
@@ -39,7 +40,7 @@
             <span>33 CATEGORIES</span> · <strong id="headerToolCount">1,085</strong> <span>TOOLS CATALOGUED</span>
           </div>
         </div>
-      </div>
+      </a>
 
       <div class="header-actions">
         <!-- Direct File Downloads -->
@@ -59,6 +60,12 @@
           <span>Case Dossier</span>
           <span id="dossierCountBadge" class="dossier-count-badge">0</span>
         </button>
+
+        <!-- Maker Navigation Button -->
+        <a href="#maker" id="navMakerBtn" class="btn-action btn-maker" title="Meet the Maker — Parth Dhande">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Maker</span>
+        </a>
       </div>
     </div>
   </header>
@@ -260,7 +267,238 @@
 
       </main>
     </div>
+
+    <!-- ====================================================================
+         MAKER PROFILE SECTION
+         Creator: Parth Dhande (Cybersecurity Enthusiast | Ethical Hacking | OSINT)
+         ==================================================================== -->
+    <section id="maker" class="maker-section" aria-labelledby="makerHeading">
+      <div class="maker-section-header">
+        <div class="maker-prompt-line">
+          <span class="maker-prompt-symbol">&gt;</span>
+          <span class="maker-prompt-command">IDENTIFYING CREATOR</span>
+          <span class="maker-prompt-cursor">_</span>
+        </div>
+        <h2 id="makerHeading" class="maker-main-heading">Meet the Maker</h2>
+        <div class="maker-sub-identity">
+          <span class="pulse-dot"></span>
+          <span>CYBERSECURITY PROFILE</span>
+        </div>
+      </div>
+
+      <div class="maker-grid-layout">
+
+        <!-- Column 1: Identity & Hacker Terminal Card -->
+        <div class="maker-left-column">
+          
+          <!-- Profile Badge Card -->
+          <div class="maker-profile-card">
+            <div class="maker-avatar-container">
+              <!-- Circular Cyber Avatar with PD Initials & Radar Ring -->
+              <div class="maker-avatar-ring">
+                <div class="maker-avatar-radar"></div>
+                <div class="maker-avatar-core">
+                  <span class="maker-avatar-initials">PD</span>
+                </div>
+              </div>
+              <div class="maker-status-badge">
+                <span class="status-indicator-dot"></span>
+                <span>Active Researcher</span>
+              </div>
+            </div>
+
+            <div class="maker-identity-info">
+              <h3 class="maker-name">Parth Dhande</h3>
+              <p class="maker-title">Cybersecurity Enthusiast <span class="sep">|</span> Ethical Hacking <span class="sep">|</span> OSINT</p>
+            </div>
+
+            <!-- Social Call-to-Action Buttons -->
+            <div class="maker-cta-group">
+              <a href="https://github.com/YOUR_GITHUB_USERNAME" id="makerGithubLink" target="_blank" rel="noopener noreferrer" class="btn-maker-cta btn-github" title="View GitHub Profile (External Link)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span>GitHub Profile</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/" id="makerLinkedinLink" target="_blank" rel="noopener noreferrer" class="btn-maker-cta btn-linkedin" title="View LinkedIn Profile (External Link)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.33a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+                </svg>
+                <span>LinkedIn Profile</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hacker Terminal Card -->
+          <div class="maker-terminal-card">
+            <div class="terminal-card-topbar">
+              <div class="terminal-dots">
+                <span class="term-dot term-dot-red" title="Close"></span>
+                <span class="term-dot term-dot-yellow" title="Minimize"></span>
+                <span class="term-dot term-dot-green" title="Maximize"></span>
+              </div>
+              <div class="terminal-tab-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                <span>parth@osint-core:~</span>
+              </div>
+              <div class="terminal-tab-status">bash</div>
+            </div>
+
+            <div class="terminal-card-body">
+              <div class="term-row">
+                <span class="term-prompt">$</span> <span class="term-cmd">whoami</span>
+              </div>
+              <div class="term-response highlight-cyan">
+                Parth Dhande — Cybersecurity Enthusiast
+              </div>
+
+              <div class="term-row">
+                <span class="term-prompt">$</span> <span class="term-cmd">interests --list</span>
+              </div>
+              <div class="term-response">
+                OSINT <span class="term-sep">|</span> Ethical Hacking <span class="term-sep">|</span> Digital Investigations <span class="term-sep">|</span> Security Tools
+              </div>
+
+              <div class="term-row">
+                <span class="term-prompt">$</span> <span class="term-cmd">cat mission.txt</span>
+              </div>
+              <div class="term-response highlight-emerald">
+                Making open-source intelligence resources easier to discover, explore, and use responsibly.
+              </div>
+
+              <div class="term-row">
+                <span class="term-prompt">$</span> <span class="term-cmd">status</span>
+              </div>
+              <div class="term-response status-running">
+                <span class="term-badge">BUILDING • LEARNING • INVESTIGATING</span>
+              </div>
+
+              <div class="term-row term-active-prompt">
+                <span class="term-prompt">$</span> <span class="term-cursor">█</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Column 2: About Narrative & Project Highlight -->
+        <div class="maker-right-column">
+
+          <!-- About Card -->
+          <div class="maker-content-card">
+            <div class="card-header-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>About the Creator</span>
+            </div>
+            <h3 class="card-title">Driven by Curiosity & Ethical Reconnaissance</h3>
+            <p class="maker-bio-p">
+              Driven by a deep passion for cybersecurity, ethical hacking, and open-source intelligence (OSINT), I created the <strong>OSINT Field Guide Framework</strong> to solve a persistent challenge in investigative reconnaissance: the fragmentation of investigative utilities across scattered scripts, repositories, and individual platforms.
+            </p>
+            <p class="maker-bio-p">
+              Whether analyzing domain infrastructure, tracking digital footprints, verifying threat intelligence indicators, or performing geospatial analysis, having organized, actionable tooling is vital. This project was developed to systematize raw field research into an accessible, high-performance reference architecture for ethical security researchers, digital investigators, and cyber professionals.
+            </p>
+
+            <!-- Key Principles / Pillars Grid -->
+            <div class="maker-pillars-grid">
+              <div class="pillar-item">
+                <div class="pillar-icon">🎯</div>
+                <div class="pillar-text">
+                  <strong>Discovery First</strong>
+                  <span>Consolidating 1,000+ scattered tools into intuitive categories.</span>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon">⚖️</div>
+                <div class="pillar-text">
+                  <strong>Responsible OSINT</strong>
+                  <span>Focusing on ethical practices, legal boundaries, and defensive security.</span>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon">⚡</div>
+                <div class="pillar-text">
+                  <strong>Investigative Agility</strong>
+                  <span>Direct launch workflows, target pivoting, and offline spreadsheets.</span>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon">🛡️</div>
+                <div class="pillar-text">
+                  <strong>Continuous Learning</strong>
+                  <span>Tracking evolving cyber threat intel, breach indices, and forensic utilities.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Project Card -->
+          <div class="maker-content-card project-highlight-card">
+            <div class="card-header-label highlight-green">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>Featured Project</span>
+            </div>
+
+            <div class="project-header-flex">
+              <div>
+                <h3 class="card-title">OSINT Field Guide Framework</h3>
+                <p class="project-tagline">Interactive reference catalogue & target pivot engine for security researchers</p>
+              </div>
+              <span class="project-version-badge">v2.4 PRO</span>
+            </div>
+
+            <div class="project-stats-row">
+              <div class="project-stat-box">
+                <span class="stat-number" id="makerDynamicToolCount">1,085</span>
+                <span class="stat-caption">Tools Catalogued</span>
+              </div>
+              <div class="project-stat-box">
+                <span class="stat-number" id="makerDynamicCategoryCount">33</span>
+                <span class="stat-caption">Intelligence Domains</span>
+              </div>
+              <div class="project-stat-box">
+                <span class="stat-number" id="makerDynamicUsefulCount">780</span>
+                <span class="stat-caption">Verified Useful</span>
+              </div>
+            </div>
+
+            <p class="project-summary-text">
+              The framework covers everything from domain intelligence and identity verification to dark web exploration, blockchain analysis, and threat hunting. Built with a responsive dark cyber terminal interface, real-time search, interactive tree navigation, and instant case dossier exporting.
+            </p>
+
+            <div class="project-actions-row">
+              <a href="#top" id="btnMakerBackToTools" class="btn-action primary" title="Return to tools search and matrix">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>Explore Tools Directory</span>
+              </a>
+              <a href="OSINT_Field_Guide.xlsx" download="OSINT_Field_Guide.xlsx" class="btn-action btn-excel" title="Download compiled spreadsheet">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span>Download Spreadsheet (.xlsx)</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
   </div>
+
+  <!-- Site Footer -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">⚡ OSINT Field Guide Framework</span>
+        <span class="footer-tagline">Created by <strong>Parth Dhande</strong> · Built for ethical security researchers and digital investigators</span>
+      </div>
+      <div class="footer-right">
+        <a href="#maker" class="footer-link">Meet the Maker</a>
+        <span class="sep">·</span>
+        <a href="#top" class="footer-link">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Tool Detail Modal -->
   <div class="modal-overlay" id="toolDetailModal">
