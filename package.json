@@ -1,0 +1,15 @@
+{
+  "name": "osint-field-guide-framework",
+  "version": "1.0.0",
+  "description": "Comprehensive OSINT Field Guide with 1,085 catalogued intelligence tools and interactive framework dashboard",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "extract": "node extract_clean.js"
+  },
+  "dependencies": {
+    "pdf-parse": "^2.4.5",
+    "xlsx": "^0.18.5"
+  }
+}
