@@ -13,8 +13,8 @@
   const MAKER_CONFIG = {
     name: 'Parth Dhande',
     role: 'Cybersecurity Enthusiast | Ethical Hacking | OSINT',
-    githubUrl: 'https://github.com/YOUR_GITHUB_USERNAME',
-    linkedinUrl: 'https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/',
+    githubUrl: 'https://github.com/Pdhande01',
+    linkedinUrl: 'https://www.linkedin.com/in/parth-dhande-297938259?utm_source=share_via&utm_content=profile&utm_medium=member_android',
     interests: 'OSINT | Ethical Hacking | Digital Investigations | Security Tools',
     mission: 'Making open-source intelligence resources easier to discover, explore, and use responsibly.',
     status: 'BUILDING • LEARNING • INVESTIGATING'
