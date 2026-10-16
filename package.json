@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
+    "build": "node build.js",
     "extract": "node extract_clean.js"
   },
   "dependencies": {

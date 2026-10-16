@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OSINT Field Guide & Intelligence Framework: Interactive reference catalogue of 1,085 open-source intelligence tools across 33 categories.">
+  <meta name="keywords" content="OSINT, Open Source Intelligence, Cybersecurity, Threat Intelligence, Reconnaissance, Geolocation, Whois, Maltego, Darkweb">
+  <title>OSINT Field Guide & Intelligence Framework — 1,085 Catalogued Tools</title>
+
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2338bdf8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand-section">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+            <line x1="12" y1="2" x2="12" y2="4"></line>
+            <line x1="12" y1="20" x2="12" y2="22"></line>
+            <line x1="20" y1="12" x2="22" y2="12"></line>
+            <line x1="2" y1="12" x2="4" y2="12"></line>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <h1>OSINT FIELD GUIDE <span class="badge-field-guide">V2.4 PRO</span></h1>
+          <div class="brand-sub">
+            <span class="pulse-dot"></span>
+            <span>33 CATEGORIES</span> · <strong id="headerToolCount">1,085</strong> <span>TOOLS CATALOGUED</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Direct File Downloads -->
+        <a href="OSINT_Field_Guide.xlsx" download="OSINT_Field_Guide.xlsx" class="btn-action btn-excel" title="Download compiled Excel spreadsheet with all 33 sheets">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>Download Excel (.xlsx)</span>
+        </a>
+
+        <a href="osint_field_guide.pdf" download="osint_field_guide.pdf" class="btn-action" title="Download original OSINT Field Guide PDF">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+          <span>PDF Guide</span>
+        </a>
+
+        <!-- Active Case Dossier Button -->
+        <button id="btnOpenDossier" class="btn-action btn-dossier" title="View Starred Tools & Case Notes">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+          <span>Case Dossier</span>
+          <span id="dossierCountBadge" class="dossier-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-container">
+
+    <!-- Quick Target Investigator Bar (Pivot Engine) -->
+    <section class="target-investigator-bar">
+      <div class="target-bar-header">
+        <div class="target-bar-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          <span>Target Quick-Pivot & Direct Launcher</span>
+        </div>
+        <div class="target-bar-hint">Select entity type, enter target value, and instantly pivot or launch lookup workflows</div>
+      </div>
+
+      <div class="target-input-row">
+        <select id="pivotTargetType" class="target-select">
+          <option value="username">👤 Target Username</option>
+          <option value="domain">🌐 Target Domain / URL</option>
+          <option value="ip">📡 Target IP Address</option>
+          <option value="email">✉️ Target Email Address</option>
+          <option value="phone">📞 Target Phone Number</option>
+          <option value="crypto">⛓️ Crypto Address / Hash</option>
+        </select>
+
+        <div class="target-input-wrapper">
+          <svg class="target-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="pivotTargetInput" class="target-input" placeholder="e.g., octocat, 8.8.8.8, targetcorp.com, satoshi...">
+        </div>
+
+        <div class="target-buttons">
+          <button id="btnFilterTargetCategory" class="btn-pivot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span>Show Matching Tools</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Launch Presets for active target -->
+      <div class="quick-launch-chips" id="quickLaunchChipsContainer">
+        <span class="quick-launch-label">Direct 1-Click Launch:</span>
+        <button class="chip-btn" data-template="https://whatsmyname.io/">WhatsMyName</button>
+        <button class="chip-btn" data-template="https://thatsthem.com/">That's Them</button>
+        <button class="chip-btn" data-template="https://www.shodan.io/search?query={target}">Shodan</button>
+        <button class="chip-btn" data-template="https://hunter.io/search/{target}">Hunter.io</button>
+        <button class="chip-btn" data-template="https://www.virustotal.com/gui/search/{target}">VirusTotal</button>
+        <button class="chip-btn" data-template="https://viewdns.info/reverseip/?host={target}">ViewDNS</button>
+        <button class="chip-btn" data-template="https://blockchain.com/explorer/search?search={target}">Blockchair</button>
+      </div>
+    </section>
+
+    <!-- Navigation & View Mode Controls -->
+    <div class="nav-controls-row">
+      <div class="view-tabs">
+        <button class="view-tab active" data-view="grid" id="tabViewGrid">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Card Grid Matrix</span>
+        </button>
+        <button class="view-tab" data-view="tree" id="tabViewTree">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+          <span>Interactive Tree Explorer</span>
+        </button>
+        <button class="view-tab" data-view="table" id="tabViewTable">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <span>Table List View</span>
+        </button>
+      </div>
+
+      <div class="stats-summary-bar">
+        <div class="stat-badge useful">
+          <span>India Useful:</span>
+          <span class="stat-val" id="statUsefulCount">780</span>
+        </div>
+        <div class="stat-badge">
+          <span>CLI / Python:</span>
+          <span class="stat-val" id="statCliCount">142</span>
+        </div>
+        <div class="stat-badge">
+          <span>Web Apps:</span>
+          <span class="stat-val" id="statWebCount">820</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Two-Column Layout -->
+    <div class="main-content-layout">
+
+      <!-- Left Column: 33 Categories Sidebar -->
+      <aside class="sidebar-panel">
+        <div class="sidebar-title">
+          <span>33 Intelligence Domains</span>
+          <button class="all-btn" id="btnSelectAllCategories">Show All</button>
+        </div>
+        <div class="category-list" id="categorySidebarList">
+          <!-- Dynamically populated -->
+        </div>
+      </aside>
+
+      <!-- Right Column: Interactive Content -->
+      <main class="content-area">
+
+        <!-- Search & Filter Controls Toolbar -->
+        <div class="filter-toolbar">
+          <div class="search-primary-row">
+            <div class="search-input-box">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="searchInput" placeholder="Search across 1,085 tools (name, keyword, command, url, purpose)...">
+              <span class="search-shortcut-hint">Ctrl + K</span>
+              <button id="searchClearBtn" class="search-clear-btn" title="Clear Search">✕</button>
+            </div>
+          </div>
+
+          <div class="filter-selects-row">
+            <div class="filter-group">
+              <span class="filter-label">Tool Type:</span>
+              <select id="filterType" class="filter-select">
+                <option value="ALL">All Types</option>
+                <option value="Web-based">Web-based</option>
+                <option value="CLI">CLI / Python / Scripts</option>
+                <option value="API">API / Services</option>
+                <option value="Browser extension">Browser Extensions</option>
+                <option value="Desktop">Desktop / GUI</option>
+                <option value="Dataset">Datasets & Wordlists</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <span class="filter-label">India Status:</span>
+              <select id="filterIndiaCompat" class="filter-select">
+                <option value="ALL">All Status</option>
+                <option value="Useful">Useful in India</option>
+                <option value="Needs review">Needs Review</option>
+                <option value="Not Useful">Not Useful (US/Region Locked)</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <span class="filter-label">Verification:</span>
+              <select id="filterVerifStatus" class="filter-select">
+                <option value="ALL">All Verification</option>
+                <option value="Not checked">Not Checked</option>
+                <option value="Needs verification">Needs Verification</option>
+              </select>
+            </div>
+
+            <button id="btnResetFilters" class="btn-reset-filters">Reset Filters</button>
+          </div>
+        </div>
+
+        <!-- Results Counter & Category Heading -->
+        <div class="results-header-bar">
+          <div class="results-count-text" id="resultsCountDisplay">
+            Showing <strong>1,085</strong> tools across all categories
+          </div>
+        </div>
+
+        <!-- View 1: Card Grid Matrix -->
+        <div id="viewGridContainer" class="tools-card-grid">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- View 2: Interactive Tree Explorer -->
+        <div id="viewTreeContainer" class="tree-explorer-container" style="display: none;">
+          <div class="tree-header">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span>Interactive OSINT Framework Tree</span>
+            </h3>
+            <button class="btn-action" id="btnExpandAllTree">Expand All</button>
+          </div>
+          <div class="tree-root-box">
+            <span>🌐 OSINT FRAMEWORK (1,085 Tools)</span>
+          </div>
+          <div id="treeNodeMount">
+            <!-- Dynamically populated tree -->
+          </div>
+        </div>
+
+        <!-- View 3: Table List View -->
+        <div id="viewTableContainer" style="display: none; overflow-x: auto; background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 16px;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.86rem; color: var(--text-main);" id="toolsMasterTable">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-accent); text-align: left; color: var(--accent-cyan); font-family: var(--font-mono);">
+                <th style="padding: 10px;">#</th>
+                <th style="padding: 10px;">Tool Name</th>
+                <th style="padding: 10px;">Category</th>
+                <th style="padding: 10px;">Sub-Category</th>
+                <th style="padding: 10px;">Type</th>
+                <th style="padding: 10px;">India Compat</th>
+                <th style="padding: 10px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tableBodyMount">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Tool Detail Modal -->
+  <div class="modal-overlay" id="toolDetailModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn">✕</button>
+      <div id="modalBodyMount">
+        <!-- Dynamically injected -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Active Case Dossier Slide-out Drawer -->
+  <aside class="dossier-drawer" id="caseDossierDrawer">
+    <div class="dossier-header">
+      <h3 style="color: var(--accent-cyan); display: flex; align-items: center; gap: 8px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+        <span>Active Case Dossier</span>
+      </h3>
+      <button class="modal-close-btn" id="closeDossierBtn" style="position: static; font-size: 1.2rem;">✕</button>
+    </div>
+    <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 14px;">Starred tools saved for current investigation session:</p>
+    
+    <div class="dossier-list" id="dossierItemsList">
+      <!-- Starred items injected -->
+    </div>
+
+    <div style="margin-top: 16px; border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+      <button id="btnClearDossier" class="btn-action" style="width: 100%; justify-content: center; margin-bottom: 8px;">Clear Dossier</button>
+      <button id="btnExportDossier" class="btn-action btn-excel" style="width: 100%; justify-content: center;">Export Case Report (JSON)</button>
+    </div>
+  </aside>
+
+  <!-- Toast Notification Mount -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="scripts/data.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
